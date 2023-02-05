@@ -27,7 +27,7 @@ public class Settings {
         
         return sc;
     }
-public static FileConfiguration get() {
+public static FileConfiguration reload() {
         ss = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");
         sc.loadConfiguration(ss);
         return sc;
