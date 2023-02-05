@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Worlds {
-    public static Flie wflags;
+    public static File wflags;
     public static YamlConfiguration wflagc;
     public static void createWorldsFile() {
 

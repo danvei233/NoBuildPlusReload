@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class FlagsManager {
-        public static Flie flags;
+        public static File flags;
         public static YamlConfiguration flagc;
 
     public static void createLocaleFile() {

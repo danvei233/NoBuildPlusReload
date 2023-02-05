@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Settings {
-        public static Flie ss;
+        public static File ss;
         public static YamlConfiguration sc;
 
     public static void createWorldsFile() {
