@@ -7,7 +7,7 @@
     <groupId>org.p1xel</groupId>
     <artifactId>NoBuildPlus</artifactId>
     <version>1.2.6</version>
-
+    <url>http://maven.apache.org</url>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -18,6 +18,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <snapshotRepository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </repositories>
 
     <dependencies>
