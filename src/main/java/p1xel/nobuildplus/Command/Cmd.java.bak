@@ -73,10 +73,6 @@ public class Cmd implements CommandExecutor {
             if (args[0].equalsIgnoreCase("reload")) {
 
                 Config.reloadConfig();
-        Locale.createLocaleFile();
-        Settings.createWorldsFile();
-        Worlds.createWorldsFile();
-        FlagsManager.createLocaleFile();
                 sender.sendMessage(Locale.getMessage("reload-success"));
                 return true;
 
