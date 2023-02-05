@@ -10,8 +10,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Worlds {
-    public static wflags = new File();
-    public static wflagc = new YamlConfiguration();
+    public static Flie wflags;
+    public static YamlConfiguration wflagc;
     public static void createWorldsFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "worlds.yml");
