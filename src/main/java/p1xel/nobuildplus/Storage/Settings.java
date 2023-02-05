@@ -10,7 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Settings {
-
+    public ss = new File();
+    public sc = new YamlConfiguration();
     public static void createWorldsFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");
@@ -18,21 +19,23 @@ public class Settings {
         if (!file.exists()) {
             NoBuildPlus.getInstance().saveResource("settings.yml", false);
         }
-
+      reload();
     }
 
     public static FileConfiguration get() {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");
-        return YamlConfiguration.loadConfiguration(file);
+        
+        return sc;
     }
-
+public static FileConfiguration get() {
+        ss = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");
+        sc.loadConfiguration(ss);
+        return sc;
+    }
     public static void set(String path, Object value) {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");
-        FileConfiguration yaml = YamlConfiguration.loadConfiguration(file);
-
-        yaml.set(path,value);
+        
+        sc.set(path,value);
         try {
-            yaml.save(file);
+            sc.save(ss);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

@@ -10,7 +10,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Worlds {
-
+    public wflags = new File();
+    public wflagc = new YamlConfiguration();
     public static void createWorldsFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "worlds.yml");
@@ -22,20 +23,22 @@ public class Worlds {
                 ioException.printStackTrace();
             }
         }
+        reload();
     }
 
     public static FileConfiguration get() {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "worlds.yml");
-        return YamlConfiguration.loadConfiguration(file);
+        return wflagc;
     }
-
+public static FileConfiguration reload() {
+        wflags = new File(NoBuildPlus.getInstance().getDataFolder(), "worlds.yml");
+        wflagc.loadConfiguration(wflags);
+                return wflagc;
+    }
     public static void set(String path, Object value) {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "worlds.yml");
-        FileConfiguration yaml = YamlConfiguration.loadConfiguration(file);
-
-        yaml.set(path,value);
+        
+        wflagc.set(path,value);
         try {
-            yaml.save(file);
+            wflagc.save(wflags);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

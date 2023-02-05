@@ -1,9 +1,7 @@
 package p1xel.nobuildplus.Storage;
-
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import p1xel.nobuildplus.NoBuildPlus;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -12,7 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class FlagsManager {
-
+    public flags = new File();
+    public flagc = new YamlConfiguration();
     public static void createLocaleFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "flags.yml");
@@ -20,20 +19,22 @@ public class FlagsManager {
         if (!file.exists()) {
             NoBuildPlus.getInstance().saveResource("flags.yml", false);
         }
+        reload();
     }
 
     public static FileConfiguration get() {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "flags.yml");
-        return YamlConfiguration.loadConfiguration(file);
+        return flagc;
     }
-
+   public static FileConfiguration reload() {
+           flags = new File(NoBuildPlus.getInstance().getDataFolder(), "flags.yml");
+           flagc.loadConfiguration(flags);
+        return flagc;
+    }
     public static void set(String path, Object value) {
-        File file = new File(NoBuildPlus.getInstance().getDataFolder(), "flags.yml");
-        FileConfiguration yaml = YamlConfiguration.loadConfiguration(file);
-
-        yaml.set(path,value);
+      
+        flagc.set(path,value);
         try {
-            yaml.save(file);
+            flagc.save(flags);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -41,9 +42,9 @@ public class FlagsManager {
     }
 
     public static boolean getFlagsIsEnabled(String flag) {
-        if (!get().isSet("flags." + flag + ".enable")) {
-            return false;
-        }
+      //  if (!get().isSet("flags." + flag + ".enable")) {
+  //          return false;
+    //    }
         return get().getBoolean("flags." + flag + ".enable");
     }
 
