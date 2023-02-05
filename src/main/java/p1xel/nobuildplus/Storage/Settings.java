@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Settings {
-    public ss = new File();
-    public sc = new YamlConfiguration();
+    public static ss = new File();
+    public static sc = new YamlConfiguration();
     public static void createWorldsFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "settings.yml");

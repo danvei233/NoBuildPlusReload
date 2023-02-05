@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class FlagsManager {
-    public flags = new File();
-    public flagc = new YamlConfiguration();
+    public static flags = new File();
+    public static flagc = new YamlConfiguration();
     public static void createLocaleFile() {
 
         File file = new File(NoBuildPlus.getInstance().getDataFolder(), "flags.yml");

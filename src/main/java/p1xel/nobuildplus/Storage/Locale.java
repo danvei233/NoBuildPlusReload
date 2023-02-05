@@ -11,7 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Locale {
-
+    public ls = new File();
+    public lc = new YamlConfiguration();
     public static void createLocaleFile() {
 
         List<String> lang = Arrays.asList("en","zh_CN","zh_TW");
